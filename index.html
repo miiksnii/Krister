@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="et">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,40 +17,42 @@
   </style>
 </head>
 <body>
+  <p class="text-center fs-4 fw-bold mt-3">Kaspar Bergert TA-23A</p>
+
   <div class="content m-5 row gap-3">
 
     <div class="col shadow p-3">
-      <h1 class="text-center mt-2">Random Number</h1>
-      <p class="text-center">Enter 2 integers to specify a range</p>
+      <h1 class="text-center mt-2">Juhuslik Arv</h1>
+      <p class="text-center">Sisesta 2 täisarvu vahemiku määramiseks</p>
       <div class="form-group">
-        <label>Enter Number</label>
-        <input type="text" class="form-control randomNumberInput" placeholder="e.g. 1 or 100">
+        <label>Sisesta arv</label>
+        <input type="text" class="form-control randomNumberInput" placeholder="nt. 1 või 100">
       </div>
       <div class="box shadow rounded mt-3">
         <ul class="UserSelected-Numbers">
-          <li>Start:</li>
-          <li>End:</li>
+          <li>Algus:</li>
+          <li>Lõpp:</li>
         </ul>
       </div>
-      <p class="result-random-number mt-2">No Result Yet</p>
+      <p class="result-random-number mt-2">Tulemust veel pole</p>
     </div>
 
     <div class="col shadow p-3">
-      <h1 class="text-center">Specific Number</h1>
+      <h1 class="text-center">Konkreetne Arv</h1>
       <div class="form-group">
-        <label>Enter a number</label>
-        <input type="text" class="form-control specificNumberInput" placeholder="e.g. 42">
+        <label>Sisesta arv</label>
+        <input type="text" class="form-control specificNumberInput" placeholder="nt. 42">
       </div>
-      <p class="result-specific-number mt-2">No Result Yet</p>
+      <p class="result-specific-number mt-2">Tulemust veel pole</p>
     </div>
 
     <div class="col shadow p-3">
-      <h1 class="text-center">Date Number</h1>
+      <h1 class="text-center">Kuupäeva Arv</h1>
       <div class="form-group">
-        <label>Enter date (MM/DD)</label>
-        <input type="text" class="form-control dateNumberInput" placeholder="e.g. 12/25">
+        <label>Sisesta kuupäev (KK/PP)</label>
+        <input type="text" class="form-control dateNumberInput" placeholder="nt. 12/25">
       </div>
-      <p class="result-date-number mt-2">No Result Yet</p>
+      <p class="result-date-number mt-2">Tulemust veel pole</p>
     </div>
 
   </div>
@@ -81,7 +83,7 @@
     }
 
     let toggleIndex = 0;
-    const prefixes = ["Start:", "End:"];
+    const prefixes = ["Algus:", "Lõpp:"];
     const maxItems = 2;
     const numbers = [0, 0];
 
@@ -126,7 +128,7 @@
             .then(res => res.text())
             .then(fact => dateResult.textContent = fact);
         } else {
-          dateResult.textContent = "Invalid date format (use MM/DD)";
+          dateResult.textContent = "Vigane kuupäeva formaat (kasuta KK/PP)";
         }
       }
     });
